@@ -39,11 +39,11 @@
 
 
 <script>
-
-     
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Dhaka&appid=739e07e8aa16b963463d96545c2b2630&units=metric')
-    .then(res => res.json())
-    .then(data => {
+    document.getElementById('search').addEventListener('click',function () {
+        var name = document.getElementById('input').value;
+        fetch (`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=739e07e8aa16b963463d96545c2b2630&units=metric`)
+        .then(res => res.json())
+        .then(data => {
         const city = data.main;
         const temperature = city.temp;
         const weather1 = data.weather[0];
@@ -54,6 +54,22 @@
         console.log(temperature);
         convertCity(temperature,weather2);
     })
+
+    })
+    
+    // fetch (`http://api.openweathermap.org/data/2.5/weather?q=${name}&appid=739e07e8aa16b963463d96545c2b2630&units=metric`)
+    // .then(res => res.json())
+    // .then(data => {
+    //     const city = data.main;
+    //     const temperature = city.temp;
+    //     const weather1 = data.weather[0];
+    //     const weather2 = weather1.description;
+
+    //     console.log(weather2);
+    //     console.log(data);
+    //     console.log(temperature);
+    //     convertCity(temperature,weather2);
+    // })
 
     function convertCity(temp,w2) {
         document.getElementById('search').addEventListener('click',function () {

@@ -41,7 +41,7 @@
 <script>
 
      
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=Dhaka&appid=739e07e8aa16b963463d96545c2b2630&units=metric')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Dhaka&appid=739e07e8aa16b963463d96545c2b2630&units=metric')
     .then(res => res.json())
     .then(data => {
         const city = data.main;
